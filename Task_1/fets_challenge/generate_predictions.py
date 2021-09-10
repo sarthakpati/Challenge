@@ -60,5 +60,7 @@ if __name__ == "__main__":
                 submission + "_pred_seg",
                 args.device,
             )
+        else:
+            print("No model found:", current_model)
 
     print("Done.")
