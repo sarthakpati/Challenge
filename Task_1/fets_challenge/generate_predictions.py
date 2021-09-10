@@ -59,7 +59,7 @@ if __name__ == "__main__":
                 args.data_dir,
                 current_output_dir,
                 current_model,
-                submission + "_pred_seg",
+                "",
                 args.device,
             )
         else:
