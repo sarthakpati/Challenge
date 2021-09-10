@@ -35,3 +35,30 @@ if __name__ == "__main__":
         required=True,
     )
     args = parser.parse_args()
+
+    all_submissions = os.listdir(args.models_dir)
+
+    current_idx = 0
+
+    for submission in all_submissions:
+        # get expected model path
+        current_model = os.path.join(
+            args.models_dir, submission, "new_functionality_false", "best_model.pkl"
+        )
+        if os.path.exists(current_model):
+            current_output_dir = os.path.join(args.out_dir, submission)
+            print(
+                "Started generating predictions for ",
+                current_idx,
+                "/",
+                len(all_submissions),
+            )
+            model_outputs_to_disc(
+                args.data_dir,
+                current_output_dir,
+                current_model,
+                submission + "_pred_seg",
+                args.device,
+            )
+
+    print("Done.")
