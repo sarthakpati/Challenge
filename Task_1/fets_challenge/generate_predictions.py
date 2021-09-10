@@ -25,7 +25,7 @@ if __name__ == "__main__":
         help="Path to the directory containing all the trained models.",
     )
     parser.add_argument(
-        "-0", "--out_dir", type=str, required=True, help="Path to the output directory."
+        "-o", "--out_dir", type=str, required=True, help="Path to the output directory."
     )
     parser.add_argument(
         "-device",
