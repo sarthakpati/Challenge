@@ -1,4 +1,4 @@
-import os, argparse
+import os, argparse, pathlib
 
 from fets_challenge import model_outputs_to_disc
 
@@ -37,6 +37,7 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     all_submissions = os.listdir(args.models_dir)
+    pathlib.Path(args.out_dir).mkdir(parents=True, exist_ok=True)
 
     current_idx = 0
 
@@ -47,6 +48,7 @@ if __name__ == "__main__":
         )
         if os.path.exists(current_model):
             current_output_dir = os.path.join(args.out_dir, submission)
+            pathlib.Path(current_output_dir).mkdir(parents=True, exist_ok=True)
             print(
                 "Started generating predictions for ",
                 current_idx,
