@@ -44,7 +44,7 @@ if __name__ == "__main__":
     for submission in all_submissions:
         # get expected model path
         current_model = os.path.join(
-            args.models_dir, submission, "new_functionality_false", "best_model.pkl"
+            args.models_dir, submission, "best_model.pkl"
         )
         if os.path.exists(current_model):
             current_output_dir = os.path.join(args.out_dir, submission)
